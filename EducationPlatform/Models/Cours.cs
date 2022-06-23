@@ -12,27 +12,30 @@ namespace EducationPlatform.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Institution
+    public partial class Cours
     {
-        public Institution()
+        public Cours()
         {
-            this.Certificates = new HashSet<Certificate>();
+            this.Assignments = new HashSet<Assignment>();
+            this.Carts = new HashSet<Cart>();
+            this.CourseDetails = new HashSet<CourseDetail>();
             this.Notices = new HashSet<Notice>();
+            this.Ratings = new HashSet<Rating>();
             this.Transactions = new HashSet<Transaction>();
         }
     
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Address { get; set; }
-        public string Email { get; set; }
-        public string Phone { get; set; }
-        public string Password { get; set; }
-        public string WebsiteLink { get; set; }
-        public string IsValid { get; set; }
-        public byte[] Photo { get; set; }
+        public string Details { get; set; }
+        public Nullable<double> Price { get; set; }
+        public string Duration { get; set; }
+        public Nullable<System.DateTime> Date { get; set; }
     
-        public virtual ICollection<Certificate> Certificates { get; set; }
+        public virtual ICollection<Assignment> Assignments { get; set; }
+        public virtual ICollection<Cart> Carts { get; set; }
+        public virtual ICollection<CourseDetail> CourseDetails { get; set; }
         public virtual ICollection<Notice> Notices { get; set; }
+        public virtual ICollection<Rating> Ratings { get; set; }
         public virtual ICollection<Transaction> Transactions { get; set; }
     }
 }

@@ -27,6 +27,8 @@
                 <th scope="col">Gender</th>
                 <th scope="col">Institution</th>
                 <th scope="col">Valid</th>
+                <th></th>
+                <th></th>
 
             </tr>
         </thead>
@@ -44,12 +46,31 @@
                     <td>@i.Gender</td>
                     <td>@i.Institution</td>
 
+
                     <td>
-                        @i.IsValid
-                        <br />
-                        <a href="#" class="btn btn-success">Activate Account</a>
-                        <a href="#" class="btn btn-warning">Restrict Account</a>
+                        @{ var a = "Yes";
+                            a = i.IsValid;
+
+                            if (string.Compare(a,"Yes")==0)
+                            {
+                                <h6 class="bg-success text-center">@i.IsValid</h6>
+                                <a href="~/AdminMentor/MentorActivate/@i.Id" class="btn btn-success">Activate Account</a>
+                                <a href="~/AdminMentor/MentorDeactivate/@i.Id" class="btn btn-warning">Restrict Account</a>
+                            }
+                            else
+                            {
+                                <h6 class="bg-danger text-center">@i.IsValid</h6>
+
+                                <a href="~/AdminMentor/MentorActivate/@i.Id" class="btn btn-success">Activate Account</a>
+                                <a href="~/AdminMentor/MentorDeactivate/@i.Id" class="btn btn-warning">Restrict Account</a>
+
+                            }
+
+                        }
+
                     </td>
+                    <td class="bg-success"><a href="~/AdminMentor/MentorUpdate/@i.Id" class="btn btn-primary">Update</a></td>
+                    <td><a href="~/AdminMentor/MentorDelete/@i.Id" class="btn btn-danger">Delete</a></td>
 
                 </tr>
             }

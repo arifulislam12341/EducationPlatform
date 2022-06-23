@@ -14,6 +14,16 @@ namespace EducationPlatform.Models
     
     public partial class Mentor
     {
+        public Mentor()
+        {
+            this.Assignments = new HashSet<Assignment>();
+            this.Certificates = new HashSet<Certificate>();
+            this.Counselings = new HashSet<Counseling>();
+            this.CourseDetails = new HashSet<CourseDetail>();
+            this.Notices = new HashSet<Notice>();
+            this.Ratings = new HashSet<Rating>();
+        }
+    
         public int Id { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
@@ -24,5 +34,12 @@ namespace EducationPlatform.Models
         public string Gender { get; set; }
         public string Institution { get; set; }
         public string IsValid { get; set; }
+    
+        public virtual ICollection<Assignment> Assignments { get; set; }
+        public virtual ICollection<Certificate> Certificates { get; set; }
+        public virtual ICollection<Counseling> Counselings { get; set; }
+        public virtual ICollection<CourseDetail> CourseDetails { get; set; }
+        public virtual ICollection<Notice> Notices { get; set; }
+        public virtual ICollection<Rating> Ratings { get; set; }
     }
 }

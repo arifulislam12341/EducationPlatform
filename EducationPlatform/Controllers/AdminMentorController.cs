@@ -46,5 +46,72 @@ namespace EducationPlatform.Controllers
             db.SaveChanges();
             return RedirectToAction("Index", "Admin"); //---action name, controller name
         }
+
+        public ActionResult MentorDelete(int id)
+        {
+            var db = new EducationPlatformEntities();
+            var mentor = (from i in db.Mentors
+                           where i.Id == id
+                           select i).FirstOrDefault();
+            db.Mentors.Remove(mentor);
+            db.SaveChanges();
+            return RedirectToAction("MentorList");
+        }
+
+        //--------update function for Mentor
+        [HttpGet]
+        public ActionResult MentorUpdate(int id)
+        {
+            var db = new EducationPlatformEntities();
+            var mentor = (from i in db.Mentors where i.Id == id select i).FirstOrDefault();
+            return View(mentor);
+        }
+
+        [HttpPost]
+        public ActionResult MentorUpdate(Mentor obj)
+        {
+            var db = new EducationPlatformEntities();
+            var mentor = (from i in db.Mentors
+                               where i.Id == obj.Id
+                               select i).FirstOrDefault();
+            //db.Entry(institution).CurrentValues.SetValues(obj);
+            mentor.Name = obj.Name;
+            mentor.Address = obj.Address;
+            mentor.Email = obj.Email;
+            mentor.Phone = obj.Phone;
+            mentor.Password = obj.Password;
+            mentor.Gender = obj.Gender;
+
+
+            db.SaveChanges();
+            return RedirectToAction("MentorList");
+        }
+
+        //------Activate deactivate function
+
+        public ActionResult MentorActivate(int id)
+        {
+            var db = new EducationPlatformEntities();
+            var mentor = (from i in db.Mentors
+                          where i.Id == id
+                          select i).FirstOrDefault();
+
+            mentor.IsValid = "Yes";
+            db.SaveChanges();
+           // ViewBag.Valid=mentor.IsValid.ToString();
+
+            return RedirectToAction("MentorList");
+        }
+        public ActionResult MentorDeactivate(int id)
+        {
+            var db = new EducationPlatformEntities();
+            var mentor = (from i in db.Mentors
+                          where i.Id == id
+                          select i).FirstOrDefault();
+
+            mentor.IsValid = "No";
+            db.SaveChanges();
+            return RedirectToAction("MentorList");
+        }
     }
 }

@@ -14,6 +14,16 @@ namespace EducationPlatform.Models
     
     public partial class Student
     {
+        public Student()
+        {
+            this.Assignments = new HashSet<Assignment>();
+            this.Carts = new HashSet<Cart>();
+            this.Certificates = new HashSet<Certificate>();
+            this.Counselings = new HashSet<Counseling>();
+            this.Ratings = new HashSet<Rating>();
+            this.Transactions = new HashSet<Transaction>();
+        }
+    
         public int Id { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
@@ -25,5 +35,12 @@ namespace EducationPlatform.Models
         public string Password { get; set; }
         public string IsValid { get; set; }
         public string Gender { get; set; }
+    
+        public virtual ICollection<Assignment> Assignments { get; set; }
+        public virtual ICollection<Cart> Carts { get; set; }
+        public virtual ICollection<Certificate> Certificates { get; set; }
+        public virtual ICollection<Counseling> Counselings { get; set; }
+        public virtual ICollection<Rating> Ratings { get; set; }
+        public virtual ICollection<Transaction> Transactions { get; set; }
     }
 }

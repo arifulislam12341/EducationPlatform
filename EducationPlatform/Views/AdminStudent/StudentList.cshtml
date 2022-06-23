@@ -28,7 +28,8 @@
                 <th scope="col">Password</th>
                 <th scope="col">Gender</th>
                 <th scope="col">Valid</th>
-
+                <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -47,11 +48,26 @@
                     <td>@i.Gender</td>
 
                     <td>
-                        @i.IsValid
-                        <br />
-                        <a href="#" class="btn btn-success">Activate Account</a>
-                        <a href="#" class="btn btn-warning">Restrict Account</a>
+                        @{
+                            if (i.IsValid == "Yes")
+                            {
+                                <h6 class="bg-success text-center">@i.IsValid</h6>
+                                <a href="~/AdminStudent/StudentActivate/@i.Id" class="btn btn-success">Activate Account</a>
+                                <a href="~/AdminStudent/StudentDeactivate/@i.Id" class="btn btn-warning">Restrict Account</a>
+                            }
+                            else
+                            {
+                                <h6 class="bg-danger text-center">@i.IsValid</h6>
+
+                                <a href="~/AdminStudent/StudentActivate/@i.Id" class="btn btn-success">Activate Account</a>
+                                <a href="~/AdminStudent/StudentDeactivate/@i.Id" class="btn btn-warning">Restrict Account</a>
+
+                            }
+                        }
                     </td>
+                  
+                    <td><a href="~/AdminStudent/StudentUpdate/@i.Id" class="btn btn-primary">Update</a></td>
+                    <td><a href="~/AdminStudent/StudentDelete/@i.Id" class="btn btn-danger">Delete</a></td>
 
                 </tr>
             }
@@ -68,3 +84,4 @@
     <!--JS bundle Link-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
+</html>

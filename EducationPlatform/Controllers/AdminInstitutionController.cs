@@ -75,5 +75,43 @@ namespace EducationPlatform.Controllers
             db.SaveChanges();
             return RedirectToAction("Index", "Admin"); //---action name, controller name
         }
+
+        public ActionResult InstitutionDelete(int id)
+        {
+            var db=new EducationPlatformEntities();
+            var student=(from i in db.Institutions
+                         where i.Id == id
+                         select i).FirstOrDefault();
+            db.Institutions.Remove(student);
+            db.SaveChanges();
+            return RedirectToAction("InstitutionList");
+        }
+
+        public ActionResult InstitutionActivate(int id)
+        {
+            var db = new EducationPlatformEntities();
+            var institution = (from i in db.Institutions
+                               where i.Id ==id
+                               select i).FirstOrDefault();
+
+            institution.IsValid = "Yes";
+            db.SaveChanges();
+           
+
+            return RedirectToAction("InstitutionList");
+        }
+        public ActionResult InstitutionDeactivate(int id)
+        {
+            var db = new EducationPlatformEntities();
+            var institution = (from i in db.Institutions
+                               where i.Id == id
+                               select i).FirstOrDefault();
+
+            institution.IsValid = "No";
+            db.SaveChanges();
+
+
+            return RedirectToAction("InstitutionList");
+        }
     }
 }

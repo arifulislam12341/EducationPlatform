@@ -23,14 +23,15 @@
                 <th scope="col">Email</th>
                 <th scope="col">Phone</th>
                 <th scope="col">Website Link</th>
-                <th scope="col">Valid</th>
+                <th scope="col" class="text-center">Valid</th>
                 <th scope="col">Logo</th>
                 <th scope="col"></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
             @foreach (var i in Model)
-             {
+            {
                 <tr>
                     <th scope="row">@i.Id</th>
                     <td>@i.Name</td>
@@ -39,14 +40,30 @@
                     <td>@i.Phone</td>
                     <td>@i.WebsiteLink</td>
                     <td>
-                        @i.IsValid
+
+                        @{ if (i.IsValid == "Yes")
+                            {
+                                <h6 class="bg-success">@i.IsValid</h6>
+                                <a href="~/AdminInstitution/InstitutionActivate/@i.Id" class="btn btn-success">Activate Account</a>
+                                <a href="~/AdminInstitution/InstitutionDeactivate/@i.Id" class="btn btn-warning">Restrict Account</a>
+                            }
+                            else
+                            {
+                                <h6 class="bg-danger">@i.IsValid</h6>
+                                <a href="~/AdminInstitution/InstitutionActivate/@i.Id" class="btn btn-success">Activate Account</a>
+                                <a href="~/AdminInstitution/InstitutionDeactivate/@i.Id" class="btn btn-warning">Restrict Account</a>
+                            }
+                        }
+
+
+
                         <br />
-                        <a href="#" class="btn btn-success">Activate Account</a>
-                        <a href="#" class="btn btn-warning">Restrict Account</a>
+
                     </td>
 
                     <td>@i.Photo</td>
                     <td><a href="~/AdminInstitution/InstitutionUpdate/@i.Id" class="btn btn-primary">Update</a></td>
+                    <td><a href="~/AdminInstitution/InstitutionDelete/@i.Id" class="btn btn-danger">Delete</a></td>
                 </tr>
              }
            

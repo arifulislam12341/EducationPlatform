@@ -26,8 +26,17 @@ namespace EducationPlatform.Models
         }
     
         public DbSet<Admin> Admins { get; set; }
+        public DbSet<Assignment> Assignments { get; set; }
+        public DbSet<Cart> Carts { get; set; }
+        public DbSet<Certificate> Certificates { get; set; }
+        public DbSet<Counseling> Counselings { get; set; }
+        public DbSet<CourseDetail> CourseDetails { get; set; }
+        public DbSet<Cours> Courses { get; set; }
         public DbSet<Institution> Institutions { get; set; }
         public DbSet<Mentor> Mentors { get; set; }
+        public DbSet<Notice> Notices { get; set; }
+        public DbSet<Rating> Ratings { get; set; }
         public DbSet<Student> Students { get; set; }
+        public DbSet<Transaction> Transactions { get; set; }
     }
 }
