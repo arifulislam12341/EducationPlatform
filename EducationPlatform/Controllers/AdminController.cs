@@ -31,6 +31,7 @@ namespace EducationPlatform.Controllers
             if (admin != null)
             {
                 return RedirectToAction("Index");
+                
             }
             else
             {

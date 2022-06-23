@@ -117,5 +117,12 @@ namespace EducationPlatform.Controllers
 
             return RedirectToAction("StudentList");
         }
+
+        public ActionResult SingleStudentList(int id)
+        {
+            var db = new EducationPlatformEntities();
+            var student = (from i in db.Students where i.Id == id select i).FirstOrDefault();
+            return View(student);
+        }
     }
 }

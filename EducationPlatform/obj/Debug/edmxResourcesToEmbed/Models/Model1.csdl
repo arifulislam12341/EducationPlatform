@@ -101,6 +101,7 @@
     <NavigationProperty Name="Notices" Relationship="Self.FK_Notices_Courses" FromRole="Courses" ToRole="Notices" />
     <NavigationProperty Name="Ratings" Relationship="Self.FK_Ratings_Courses" FromRole="Courses" ToRole="Ratings" />
     <NavigationProperty Name="Transactions" Relationship="Self.FK_Transactions_Courses" FromRole="Courses" ToRole="Transactions" />
+    <Property Name="Photo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Institution">
     <Key>

@@ -30,6 +30,7 @@ namespace EducationPlatform.Models
         public Nullable<double> Price { get; set; }
         public string Duration { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
+        public string Photo { get; set; }
     
         public virtual ICollection<Assignment> Assignments { get; set; }
         public virtual ICollection<Cart> Carts { get; set; }

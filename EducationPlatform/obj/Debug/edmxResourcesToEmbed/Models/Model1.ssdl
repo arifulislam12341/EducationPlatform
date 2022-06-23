@@ -83,6 +83,7 @@
     <Property Name="Price" Type="float" />
     <Property Name="Duration" Type="varchar" MaxLength="50" />
     <Property Name="Date" Type="date" />
+    <Property Name="Photo" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Institutions">
     <Key>

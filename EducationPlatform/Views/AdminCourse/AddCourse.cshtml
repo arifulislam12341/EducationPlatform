@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "InstitutionAdd";
+    ViewBag.Title = "AddCourse";
 }
 
 <!DOCTYPE html>
@@ -17,9 +17,9 @@
         <form action="" method="post">
         <tbody>
 
-            
+
             <tr>
-                <td>Name:</td>
+                <td>Course Name:</td>
                 <td>
                     <input type="text" name="Name" value="" class="form-control" />
                     <!--@Html.ValidationMessage("Name") -->
@@ -27,28 +27,29 @@
             </tr>
             <tr>
 
-                <td>Address</td>
-                <td><input type="text" name="Address" value="" class="form-control" /></td>
+                <td>Details</td>
+                
+                <td>
+                    <textarea input type="text" name="Details" value="" class="form-control" rows="4" cols="100">
+
+                    </textarea>
+                </td>
             </tr>
             <tr>
-                <td>Email:</td>
+                <td>Price:</td>
 
-                <td><input type="text" name="Email" value="" class="form-control" /></td>
+                <td><input type="text" name="Price" value="" class="form-control" /></td>
             </tr>
             <tr>
-                <td>Phone:</td>
+                <td>Duration:</td>
 
-                <td><input type="text" name="Phone" value="" class="form-control" /></td>
+                <td><input type="text" name="Duration" value="" class="form-control" /></td>
             </tr>
             <tr>
-                <td>Password:</td>
+       
+                <td>Photo:</td>
 
-                <td><input type="text" name="Password" value="" class="form-control" /></td>
-            </tr>
-            <tr>
-                <td>Website:</td>
-
-                <td><input type="text" name="WebsiteLink" value="" class="form-control" /></td>
+                <td><input type="text" name="Photo" value="" class="form-control" /></td>
             </tr>
             <tr>
                 <td></td>
@@ -67,6 +68,4 @@
     </table>
 </body>
 </html>
-
-
 
