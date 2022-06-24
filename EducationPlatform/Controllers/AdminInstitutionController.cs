@@ -113,5 +113,12 @@ namespace EducationPlatform.Controllers
 
             return RedirectToAction("InstitutionList");
         }
+
+        public ActionResult SingleInstitutionList(int id)
+        {
+            var db = new EducationPlatformEntities();
+            var institution = (from i in db.Institutions where i.Id == id select i).FirstOrDefault();
+            return View(institution);
+        }
     }
 }

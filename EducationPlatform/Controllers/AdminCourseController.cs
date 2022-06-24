@@ -41,6 +41,13 @@ namespace EducationPlatform.Controllers
             return RedirectToAction("Index","Admin");
         }
 
-        
+        public ActionResult SingleCourseList(int id)
+        {
+            var db = new EducationPlatformEntities();
+            var course = (from i in db.Courses where i.Id == id select i).FirstOrDefault();
+            return View(course);
+        }
+
+
     }
 }

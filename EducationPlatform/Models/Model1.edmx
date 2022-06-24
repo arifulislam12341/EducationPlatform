@@ -167,6 +167,16 @@
           <Property Name="InstitutionId" Type="int" />
           <Property Name="BkashTransactionNumber" Type="varchar" MaxLength="50" />
           <Property Name="Date" Type="date" />
+          <Property Name="CoursePrice" Type="varchar" MaxLength="50" />
+          <Property Name="CreditedAmount" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ValidStudents">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StudentId" Type="int" />
+          <Property Name="CourseId" Type="int" />
         </EntityType>
         <Association Name="FK_Assignments_Courses">
           <End Role="Courses" Type="Self.Courses" Multiplicity="0..1" />
@@ -434,6 +444,7 @@
           <EntitySet Name="Ratings" EntityType="Self.Ratings" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Transactions" EntityType="Self.Transactions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ValidStudents" EntityType="Self.ValidStudents" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Assignments_Courses" Association="Self.FK_Assignments_Courses">
             <End Role="Courses" EntitySet="Courses" />
             <End Role="Assignments" EntitySet="Assignments" />
@@ -727,6 +738,8 @@
           <NavigationProperty Name="Cours" Relationship="Self.FK_Transactions_Courses" FromRole="Transactions" ToRole="Courses" />
           <NavigationProperty Name="Institution" Relationship="Self.FK_Transactions_Institutions" FromRole="Transactions" ToRole="Institutions" />
           <NavigationProperty Name="Student" Relationship="Self.FK_Transactions_Students" FromRole="Transactions" ToRole="Students" />
+          <Property Name="CoursePrice" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CreditedAmount" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
         </EntityType>
         <Association Name="FK_Assignments_Courses">
           <End Role="Courses" Type="Self.Cours" Multiplicity="0..1" />
@@ -1078,7 +1091,16 @@
             <End Role="Students" EntitySet="Students" />
             <End Role="Transactions" EntitySet="Transactions" />
           </AssociationSet>
+          <EntitySet Name="ValidStudents" EntityType="EducationPlatformModel.ValidStudent" />
         </EntityContainer>
+        <EntityType Name="ValidStudent">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StudentId" Type="Int32" />
+          <Property Name="CourseId" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1252,12 +1274,23 @@
           <EntitySetMapping Name="Transactions">
             <EntityTypeMapping TypeName="EducationPlatformModel.Transaction">
               <MappingFragment StoreEntitySet="Transactions">
+                <ScalarProperty Name="CreditedAmount" ColumnName="CreditedAmount" />
+                <ScalarProperty Name="CoursePrice" ColumnName="CoursePrice" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="CourseId" ColumnName="CourseId" />
                 <ScalarProperty Name="StudentId" ColumnName="StudentId" />
                 <ScalarProperty Name="InstitutionId" ColumnName="InstitutionId" />
                 <ScalarProperty Name="BkashTransactionNumber" ColumnName="BkashTransactionNumber" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ValidStudents">
+            <EntityTypeMapping TypeName="EducationPlatformModel.ValidStudent">
+              <MappingFragment StoreEntitySet="ValidStudents">
+                <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

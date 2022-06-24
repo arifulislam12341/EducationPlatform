@@ -12,19 +12,10 @@ namespace EducationPlatform.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Transaction
+    public partial class ValidStudent
     {
         public int Id { get; set; }
-        public Nullable<int> CourseId { get; set; }
         public Nullable<int> StudentId { get; set; }
-        public Nullable<int> InstitutionId { get; set; }
-        public string BkashTransactionNumber { get; set; }
-        public Nullable<System.DateTime> Date { get; set; }
-        public string CoursePrice { get; set; }
-        public string CreditedAmount { get; set; }
-    
-        public virtual Cours Cours { get; set; }
-        public virtual Institution Institution { get; set; }
-        public virtual Student Student { get; set; }
+        public Nullable<int> CourseId { get; set; }
     }
 }

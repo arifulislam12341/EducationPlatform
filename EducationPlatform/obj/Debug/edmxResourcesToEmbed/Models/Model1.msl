@@ -168,12 +168,23 @@
     <EntitySetMapping Name="Transactions">
       <EntityTypeMapping TypeName="EducationPlatformModel.Transaction">
         <MappingFragment StoreEntitySet="Transactions">
+          <ScalarProperty Name="CreditedAmount" ColumnName="CreditedAmount" />
+          <ScalarProperty Name="CoursePrice" ColumnName="CoursePrice" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="CourseId" ColumnName="CourseId" />
           <ScalarProperty Name="StudentId" ColumnName="StudentId" />
           <ScalarProperty Name="InstitutionId" ColumnName="InstitutionId" />
           <ScalarProperty Name="BkashTransactionNumber" ColumnName="BkashTransactionNumber" />
           <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ValidStudents">
+      <EntityTypeMapping TypeName="EducationPlatformModel.ValidStudent">
+        <MappingFragment StoreEntitySet="ValidStudents">
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

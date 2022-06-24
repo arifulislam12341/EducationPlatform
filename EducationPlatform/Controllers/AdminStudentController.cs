@@ -124,5 +124,42 @@ namespace EducationPlatform.Controllers
             var student = (from i in db.Students where i.Id == id select i).FirstOrDefault();
             return View(student);
         }
+
+        
+
+        public ActionResult ValidateStudentCourse(int id)
+        {
+            var transactionId = id;
+            var db = new EducationPlatformEntities();
+            var studentId= (from i in db.Transactions
+                             where i.Id == transactionId
+                             select i.StudentId).FirstOrDefault() ;
+            var courseId= (from i in db.Transactions
+                           where i.Id == transactionId
+                           select i.CourseId).FirstOrDefault();
+
+            var existStudent = (from i in db.ValidStudents
+                                where (i.StudentId == studentId && i.CourseId==courseId)
+                                select i).FirstOrDefault();
+
+            //return View(existStudent);
+            if (existStudent == null)
+            {
+                var validStudent = new ValidStudent()
+                {
+                   StudentId = studentId,
+                    CourseId = courseId,
+
+                };
+                db.ValidStudents.Add(validStudent);
+                db.SaveChanges();
+                return RedirectToAction("Index", "Admin");
+            }
+            TempData["msg"] = "Student Already Validate";
+            return RedirectToAction("TransactionHistory", "AdminTransaction");
+            
+            
+
+        }
     }
 }

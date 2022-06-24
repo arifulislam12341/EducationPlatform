@@ -204,6 +204,8 @@
     <NavigationProperty Name="Cours" Relationship="Self.FK_Transactions_Courses" FromRole="Transactions" ToRole="Courses" />
     <NavigationProperty Name="Institution" Relationship="Self.FK_Transactions_Institutions" FromRole="Transactions" ToRole="Institutions" />
     <NavigationProperty Name="Student" Relationship="Self.FK_Transactions_Students" FromRole="Transactions" ToRole="Students" />
+    <Property Name="CoursePrice" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CreditedAmount" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
   </EntityType>
   <Association Name="FK_Assignments_Courses">
     <End Role="Courses" Type="Self.Cours" Multiplicity="0..1" />
@@ -555,5 +557,14 @@
       <End Role="Students" EntitySet="Students" />
       <End Role="Transactions" EntitySet="Transactions" />
     </AssociationSet>
+    <EntitySet Name="ValidStudents" EntityType="EducationPlatformModel.ValidStudent" />
   </EntityContainer>
+  <EntityType Name="ValidStudent">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StudentId" Type="Int32" />
+    <Property Name="CourseId" Type="Int32" />
+  </EntityType>
 </Schema>

@@ -190,6 +190,9 @@
     <Compile Include="Models\Transaction.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ValidStudent.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -257,6 +260,9 @@
     <Content Include="Views\AdminCourse\AddCourse.cshtml" />
     <Content Include="Views\AdminTransaction\TransactionHistory.cshtml" />
     <Content Include="Views\AdminStudent\SingleStudentList.cshtml" />
+    <Content Include="Views\AdminInstitution\SingleInstitutionList.cshtml" />
+    <Content Include="Views\AdminCourse\SingleCourseList.cshtml" />
+    <Content Include="Views\AdminStudent\ValidateStudentCourse.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

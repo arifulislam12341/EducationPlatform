@@ -38,5 +38,6 @@ namespace EducationPlatform.Models
         public DbSet<Rating> Ratings { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
+        public DbSet<ValidStudent> ValidStudents { get; set; }
     }
 }
