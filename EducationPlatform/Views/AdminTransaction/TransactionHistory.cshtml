@@ -58,7 +58,7 @@
                     <td>@i.BkashTransactionNumber</td>
                     <td> @i.CoursePrice tk</td>
                     @{
-                        if (Int32.Parse(@i.CreditedAmount) < Int32.Parse(@i.CoursePrice))
+                        if (@i.CreditedAmount < @i.CoursePrice)
                         {
                             <td class="bg-danger">@i.CreditedAmount tk</td>
                         }
@@ -70,7 +70,7 @@
 
                     <td>
                         @{
-                            if (Int32.Parse(@i.CreditedAmount) < Int32.Parse(@i.CoursePrice))
+                            if (@i.CreditedAmount < @i.CoursePrice)
                             {
 
 

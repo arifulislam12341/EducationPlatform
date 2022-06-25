@@ -113,5 +113,25 @@ namespace EducationPlatform.Controllers
             db.SaveChanges();
             return RedirectToAction("MentorList");
         }
+
+        public ActionResult MentorSearch()
+        {
+
+            return View();
+        }
+        [HttpPost]
+        public ActionResult MentorSearchResult()
+        {
+
+            var name = Request["searching"];
+            var db = new EducationPlatformEntities();
+
+            var searchResult = (from i in db.Mentors
+                                where i.Name.Contains(name)
+
+                                select i).ToList();
+            // return RedirectToAction()
+            return View(searchResult);
+        }
     }
 }

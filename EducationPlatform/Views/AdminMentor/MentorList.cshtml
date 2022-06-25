@@ -48,10 +48,10 @@
 
 
                     <td>
-                        @{ var a = "Yes";
-                            a = i.IsValid;
+                        @{ //var a = "Yes";
+                           var a = i.IsValid;
 
-                            if (string.Compare(a,"Yes")==0)
+                            if (a=="Yes")
                             {
                                 <h6 class="bg-success text-center">@i.IsValid</h6>
                                 <a href="~/AdminMentor/MentorActivate/@i.Id" class="btn btn-success">Activate Account</a>

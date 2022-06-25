@@ -161,5 +161,56 @@ namespace EducationPlatform.Controllers
             
 
         }
+
+        public ActionResult StudentSearch()
+        {
+            
+            return View();
+        }
+        [HttpPost]
+        public ActionResult StudentSearchResult()
+        {
+            
+            var search = Request["searching"];
+            var db= new EducationPlatformEntities();
+            
+            var searchResult = (from i in db.Students
+                                where i.Name.Contains(search) || i.Email.Contains(search)
+            
+                                select i).ToList();
+           // return RedirectToAction()
+            return View(searchResult);
+        }
+
+        public ActionResult StudentPasswordChangeRequest()
+        {
+            var db=new EducationPlatformEntities();
+
+            var RequesList = db.PasswordChanges.ToList();
+            return View(RequesList);
+        }
+
+        public ActionResult StudentCertificate()
+        {
+            var db = new EducationPlatformEntities();
+
+            var certificateRequest = db.Certificates.ToList();
+            return View(certificateRequest);
+        }
+
+        public ActionResult ApproveCertificate(int id)
+        {
+            var db = new EducationPlatformEntities();
+
+            var certificateRequest = (from i in db.Certificates
+                                      where i.Id == id
+                                      select i).FirstOrDefault();
+
+            certificateRequest.Status = "Approved";
+            db.SaveChanges();
+
+            return RedirectToAction("StudentCertificate");
+
+        }
     }
 }

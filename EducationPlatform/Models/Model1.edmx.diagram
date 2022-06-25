@@ -4,20 +4,21 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="0e37f5ea2eb342ac849db80bbaf60893" Name="Diagram1" ZoomLevel="72">
+      <Diagram DiagramId="227fef2799914e2882354cd40885d446" Name="Diagram1" ZoomLevel="69">
         <EntityTypeShape EntityType="EducationPlatformModel.Admin" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EducationPlatformModel.Assignment" Width="1.5" PointX="3" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EducationPlatformModel.Cart" Width="1.5" PointX="6" PointY="11" IsExpanded="true" />
-        <EntityTypeShape EntityType="EducationPlatformModel.Certificate" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EducationPlatformModel.Counseling" Width="1.5" PointX="3" PointY="14.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="EducationPlatformModel.CourseDetail" Width="1.5" PointX="9" PointY="9.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="EducationPlatformModel.Cours" Width="1.5" PointX="3.75" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="EducationPlatformModel.Institution" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="EducationPlatformModel.Mentor" Width="1.5" PointX="0.75" PointY="15.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="EducationPlatformModel.Notice" Width="1.5" PointX="9" PointY="5.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="EducationPlatformModel.Rating" Width="1.5" PointX="6" PointY="6.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="EducationPlatformModel.Student" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationPlatformModel.Assignment" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationPlatformModel.Cart" Width="1.5" PointX="6" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationPlatformModel.Certificate" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationPlatformModel.Counseling" Width="1.5" PointX="3" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationPlatformModel.CourseDetail" Width="1.5" PointX="9" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationPlatformModel.Cours" Width="1.5" PointX="3.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationPlatformModel.Institution" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationPlatformModel.Mentor" Width="1.5" PointX="0.75" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationPlatformModel.Notice" Width="1.5" PointX="9" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationPlatformModel.Rating" Width="1.5" PointX="6" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationPlatformModel.Student" Width="1.5" PointX="0.75" PointY="10.375" IsExpanded="true" />
         <EntityTypeShape EntityType="EducationPlatformModel.Transaction" Width="1.5" PointX="6" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationPlatformModel.ValidStudent" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="EducationPlatformModel.FK_Assignments_Courses" ManuallyRouted="false" />
         <AssociationConnector Association="EducationPlatformModel.FK_Assignments_Mentors" ManuallyRouted="false" />
         <AssociationConnector Association="EducationPlatformModel.FK_Assignments_Students" ManuallyRouted="false" />
@@ -39,7 +40,8 @@
         <AssociationConnector Association="EducationPlatformModel.FK_Ratings_Mentors" ManuallyRouted="false" />
         <AssociationConnector Association="EducationPlatformModel.FK_Ratings_Students" ManuallyRouted="false" />
         <AssociationConnector Association="EducationPlatformModel.FK_Transactions_Students" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="EducationPlatformModel.ValidStudent" Width="1.5" PointX="6.375" PointY="0.75" />
+        <EntityTypeShape EntityType="EducationPlatformModel.PasswordChanx" Width="1.5" PointX="8.375" PointY="0.75" />
+        <EntityTypeShape EntityType="EducationPlatformModel.VarsityPasswordChanx" Width="1.5" PointX="10.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

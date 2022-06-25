@@ -130,6 +130,14 @@
           <Property Name="Details" Type="varchar" MaxLength="50" />
           <Property Name="Date" Type="date" />
         </EntityType>
+        <EntityType Name="PasswordChanges">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Mail" Type="varchar(max)" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="Ratings">
           <Key>
             <PropertyRef Name="Id" />
@@ -167,8 +175,8 @@
           <Property Name="InstitutionId" Type="int" />
           <Property Name="BkashTransactionNumber" Type="varchar" MaxLength="50" />
           <Property Name="Date" Type="date" />
-          <Property Name="CoursePrice" Type="varchar" MaxLength="50" />
-          <Property Name="CreditedAmount" Type="varchar" MaxLength="50" />
+          <Property Name="CoursePrice" Type="int" />
+          <Property Name="CreditedAmount" Type="int" />
         </EntityType>
         <EntityType Name="ValidStudents">
           <Key>
@@ -177,6 +185,13 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="StudentId" Type="int" />
           <Property Name="CourseId" Type="int" />
+        </EntityType>
+        <EntityType Name="VarsityPasswordChanges">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
         </EntityType>
         <Association Name="FK_Assignments_Courses">
           <End Role="Courses" Type="Self.Courses" Multiplicity="0..1" />
@@ -441,10 +456,12 @@
           <EntitySet Name="Institutions" EntityType="Self.Institutions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Mentors" EntityType="Self.Mentors" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Notices" EntityType="Self.Notices" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PasswordChanges" EntityType="Self.PasswordChanges" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ratings" EntityType="Self.Ratings" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Transactions" EntityType="Self.Transactions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ValidStudents" EntityType="Self.ValidStudents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VarsityPasswordChanges" EntityType="Self.VarsityPasswordChanges" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Assignments_Courses" Association="Self.FK_Assignments_Courses">
             <End Role="Courses" EntitySet="Courses" />
             <End Role="Assignments" EntitySet="Assignments" />
@@ -629,13 +646,13 @@
           <Property Name="Price" Type="Double" />
           <Property Name="Duration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="Photo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Assignments" Relationship="Self.FK_Assignments_Courses" FromRole="Courses" ToRole="Assignments" />
           <NavigationProperty Name="Carts" Relationship="Self.FK_Carts_Courses" FromRole="Courses" ToRole="Carts" />
           <NavigationProperty Name="CourseDetails" Relationship="Self.FK_CourseDetails_Mentors" FromRole="Courses" ToRole="CourseDetails" />
           <NavigationProperty Name="Notices" Relationship="Self.FK_Notices_Courses" FromRole="Courses" ToRole="Notices" />
           <NavigationProperty Name="Ratings" Relationship="Self.FK_Ratings_Courses" FromRole="Courses" ToRole="Ratings" />
           <NavigationProperty Name="Transactions" Relationship="Self.FK_Transactions_Courses" FromRole="Courses" ToRole="Transactions" />
-          <Property Name="Photo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Institution">
           <Key>
@@ -735,11 +752,19 @@
           <Property Name="InstitutionId" Type="Int32" />
           <Property Name="BkashTransactionNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="CoursePrice" Type="Int32" />
+          <Property Name="CreditedAmount" Type="Int32" />
           <NavigationProperty Name="Cours" Relationship="Self.FK_Transactions_Courses" FromRole="Transactions" ToRole="Courses" />
           <NavigationProperty Name="Institution" Relationship="Self.FK_Transactions_Institutions" FromRole="Transactions" ToRole="Institutions" />
           <NavigationProperty Name="Student" Relationship="Self.FK_Transactions_Students" FromRole="Transactions" ToRole="Students" />
-          <Property Name="CoursePrice" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="CreditedAmount" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="ValidStudent">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StudentId" Type="Int32" />
+          <Property Name="CourseId" Type="Int32" />
         </EntityType>
         <Association Name="FK_Assignments_Courses">
           <End Role="Courses" Type="Self.Cours" Multiplicity="0..1" />
@@ -1007,6 +1032,7 @@
           <EntitySet Name="Ratings" EntityType="Self.Rating" />
           <EntitySet Name="Students" EntityType="Self.Student" />
           <EntitySet Name="Transactions" EntityType="Self.Transaction" />
+          <EntitySet Name="ValidStudents" EntityType="Self.ValidStudent" />
           <AssociationSet Name="FK_Assignments_Courses" Association="Self.FK_Assignments_Courses">
             <End Role="Courses" EntitySet="Courses" />
             <End Role="Assignments" EntitySet="Assignments" />
@@ -1091,15 +1117,23 @@
             <End Role="Students" EntitySet="Students" />
             <End Role="Transactions" EntitySet="Transactions" />
           </AssociationSet>
-          <EntitySet Name="ValidStudents" EntityType="EducationPlatformModel.ValidStudent" />
+          <EntitySet Name="PasswordChanges" EntityType="EducationPlatformModel.PasswordChanx" />
+          <EntitySet Name="VarsityPasswordChanges" EntityType="EducationPlatformModel.VarsityPasswordChanx" />
         </EntityContainer>
-        <EntityType Name="ValidStudent">
+        <EntityType Name="PasswordChanx">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="StudentId" Type="Int32" />
-          <Property Name="CourseId" Type="Int32" />
+          <Property Name="Mail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="VarsityPasswordChanx">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1189,13 +1223,13 @@
           <EntitySetMapping Name="Courses">
             <EntityTypeMapping TypeName="EducationPlatformModel.Cours">
               <MappingFragment StoreEntitySet="Courses">
-                <ScalarProperty Name="Photo" ColumnName="Photo" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Details" ColumnName="Details" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Duration" ColumnName="Duration" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1274,22 +1308,39 @@
           <EntitySetMapping Name="Transactions">
             <EntityTypeMapping TypeName="EducationPlatformModel.Transaction">
               <MappingFragment StoreEntitySet="Transactions">
-                <ScalarProperty Name="CreditedAmount" ColumnName="CreditedAmount" />
-                <ScalarProperty Name="CoursePrice" ColumnName="CoursePrice" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="CourseId" ColumnName="CourseId" />
                 <ScalarProperty Name="StudentId" ColumnName="StudentId" />
                 <ScalarProperty Name="InstitutionId" ColumnName="InstitutionId" />
                 <ScalarProperty Name="BkashTransactionNumber" ColumnName="BkashTransactionNumber" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="CoursePrice" ColumnName="CoursePrice" />
+                <ScalarProperty Name="CreditedAmount" ColumnName="CreditedAmount" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ValidStudents">
             <EntityTypeMapping TypeName="EducationPlatformModel.ValidStudent">
               <MappingFragment StoreEntitySet="ValidStudents">
-                <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+                <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PasswordChanges">
+            <EntityTypeMapping TypeName="EducationPlatformModel.PasswordChanx">
+              <MappingFragment StoreEntitySet="PasswordChanges">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VarsityPasswordChanges">
+            <EntityTypeMapping TypeName="EducationPlatformModel.VarsityPasswordChanx">
+              <MappingFragment StoreEntitySet="VarsityPasswordChanges">
+                <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

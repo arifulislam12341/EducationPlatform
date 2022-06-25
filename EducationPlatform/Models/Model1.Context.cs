@@ -39,5 +39,7 @@ namespace EducationPlatform.Models
         public DbSet<Student> Students { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
         public DbSet<ValidStudent> ValidStudents { get; set; }
+        public DbSet<PasswordChanx> PasswordChanges { get; set; }
+        public DbSet<VarsityPasswordChanx> VarsityPasswordChanges { get; set; }
     }
 }

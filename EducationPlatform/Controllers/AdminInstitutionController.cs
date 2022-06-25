@@ -120,5 +120,32 @@ namespace EducationPlatform.Controllers
             var institution = (from i in db.Institutions where i.Id == id select i).FirstOrDefault();
             return View(institution);
         }
+
+        public ActionResult InstitutionSearch()
+        {
+
+            return View();
+        }
+        [HttpPost]
+        public ActionResult InstitutionSearchResult()
+        {
+
+            var search = Request["searching"];
+            var db = new EducationPlatformEntities();
+
+            var searchResult = (from i in db.Institutions
+                                where i.Name.Contains(search) || i.Email.Contains(search)
+                                select i).ToList();
+            // return RedirectToAction()
+            return View(searchResult);
+        }
+
+        public ActionResult InstitutionPasswordChangeRequest()
+        {
+            var db = new EducationPlatformEntities();
+
+            var RequesList = db.VarsityPasswordChanges.ToList();
+            return View(RequesList);
+        }
     }
 }

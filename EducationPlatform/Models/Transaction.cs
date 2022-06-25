@@ -20,8 +20,8 @@ namespace EducationPlatform.Models
         public Nullable<int> InstitutionId { get; set; }
         public string BkashTransactionNumber { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
-        public string CoursePrice { get; set; }
-        public string CreditedAmount { get; set; }
+        public Nullable<int> CoursePrice { get; set; }
+        public Nullable<int> CreditedAmount { get; set; }
     
         public virtual Cours Cours { get; set; }
         public virtual Institution Institution { get; set; }
