@@ -13,6 +13,27 @@
     <title>Document</title>
 </head>
 <body>
+    <header>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active" aria-current="page" href="~/Admin/Index">Home</a>
+                        <a class="nav-link" href="~/Admin/AdminProfile">Your Profile</a>
+                        <a class="nav-link" href="~/Admin/AdminUpdate">Update Profile</a>
+                        <a class="nav-link " href="~/Admin/AdminLogout" tabindex="-1" aria-disabled="true">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+    </header>
     <section class="Container">
         <div class="row">
             <div class="col-lg-3 bg-success h-100">
@@ -32,11 +53,20 @@
                     <a href="~/AdminStudent/StudentAdd" class="btn btn-primary">Add Student</a>
                     <h3>Add Courses</h3>
                     <a href="~/AdminCourse/AddCourse" class="btn btn-primary">Add Course</a>
+                    <a href="~/AdminCourse/CourseList" class="btn btn-primary">Course List</a>
                     <h3>Transactions</h3>
                     <a href="~/AdminTransaction/TransactionHistory" class="btn btn-primary">All Transaction</a>
                     <h3>Search</h3>
                     <a href="~/AdminStudent/StudentSearch" class="btn btn-primary">Search Student</a>
                     <a href="~/AdminInstitution/InstitutionSearch" class="btn btn-primary">Search Institution</a>
+                    <a href="~/AdminMentor/MentorSearch" class="btn btn-primary">Search Mentor</a>
+                    <h3>Password Change Request</h3>
+                    <a href="~/AdminStudent/StudentPasswordChangeRequest" class="btn btn-primary">Student</a>
+                    <a href="~/AdminInstitution/InstitutionPasswordChangeRequest" class="btn btn-primary">Institution</a>
+                    <h3>Revnue</h3>
+                    <a href="~/AdminREvenue/Revenue" class="btn btn-primary">Revnue Details</a>
+                    <a href="~/AdminInstitution/InstitutionPasswordChangeRequest" class="btn btn-primary">Institution</a>
+
                 </div>
                
             </div>

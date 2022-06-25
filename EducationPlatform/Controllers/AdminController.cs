@@ -30,7 +30,9 @@ namespace EducationPlatform.Controllers
                          select i).FirstOrDefault();
             if (admin != null)
             {
+                Session["Id"] = admin.Id;
                 return RedirectToAction("Index");
+               
                 
             }
             else
@@ -38,6 +40,57 @@ namespace EducationPlatform.Controllers
                 TempData["msg"] = "Wrong Email or Password";
                 return View();
             }
+        }
+
+        public ActionResult AdminProfile()
+        {
+            var adminId =Int32.Parse(Session["Id"].ToString());
+
+            var db = new EducationPlatformEntities();
+            var admin = (from i in db.Admins where i.Id == adminId select i).FirstOrDefault();
+            
+            return View(admin);
+        }
+
+
+        [HttpGet]
+        public ActionResult AdminUpdate()
+        {
+            var adminId = Int32.Parse(Session["Id"].ToString());
+
+            var db = new EducationPlatformEntities();
+            var admin = (from i in db.Admins where i.Id == adminId select i).FirstOrDefault();
+
+            return View(admin);
+        }
+
+        [HttpPost]
+        public ActionResult AdminUpdate(Admin obj)
+        {
+            var adminId = Int32.Parse(Session["Id"].ToString());
+            var db = new EducationPlatformEntities();
+            var admin = (from i in db.Admins
+                               where i.Id == adminId
+                         select i).FirstOrDefault();
+            //db.Entry(institution).CurrentValues.SetValues(obj);
+            admin.Name = obj.Name;
+            admin.Address = obj.Address;
+            admin.Email = obj.Email;
+            admin.Phone = obj.Phone;
+            admin.Password = obj.Password;
+           
+
+
+            db.SaveChanges();
+
+
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult AdminLogout()
+        {
+            Session.RemoveAll();
+            return Redirect("AdminLogin");
         }
     }
 }

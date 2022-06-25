@@ -281,6 +281,9 @@
     <Content Include="Views\AdminStudent\StudentPasswordChangeRequest.cshtml" />
     <Content Include="Views\AdminInstitution\InstitutionPasswordChangeRequest.cshtml" />
     <Content Include="Views\AdminStudent\StudentCertificate.cshtml" />
+    <Content Include="Views\AdminCourse\CourseList.cshtml" />
+    <Content Include="Views\Admin\AdminProfile.cshtml" />
+    <Content Include="Views\Admin\AdminUpdate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
