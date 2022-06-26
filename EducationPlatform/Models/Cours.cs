@@ -16,7 +16,6 @@ namespace EducationPlatform.Models
     {
         public Cours()
         {
-            this.Assignments = new HashSet<Assignment>();
             this.Carts = new HashSet<Cart>();
             this.CourseDetails = new HashSet<CourseDetail>();
             this.Notices = new HashSet<Notice>();
@@ -31,8 +30,9 @@ namespace EducationPlatform.Models
         public string Duration { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
         public string Photo { get; set; }
+        public Nullable<int> InstitutionId { get; set; }
+        public Nullable<int> MentorId { get; set; }
     
-        public virtual ICollection<Assignment> Assignments { get; set; }
         public virtual ICollection<Cart> Carts { get; set; }
         public virtual ICollection<CourseDetail> CourseDetails { get; set; }
         public virtual ICollection<Notice> Notices { get; set; }

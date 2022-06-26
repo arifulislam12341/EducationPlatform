@@ -22,7 +22,6 @@ namespace EducationPlatform.Models
         public Nullable<System.DateTime> Date { get; set; }
     
         public virtual Cours Cours { get; set; }
-        public virtual Mentor Mentor { get; set; }
         public virtual Student Student { get; set; }
     }
 }

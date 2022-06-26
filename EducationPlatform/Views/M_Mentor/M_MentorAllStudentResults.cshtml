@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "M_MentorAllStudentResults";
+}
+
+<h2>M_MentorAllStudentResults</h2>
+
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th scope="col">STUDENT ID</th>
+            <th>
+                ASSIGNMENT ID
+            </th>
+            <th scope="col">MARKS</th>
+            <th scope="col">COURSENAME</th>
+            <th>STATUS</th>
+
+            
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+
+        @foreach (var p in Model)
+        {
+            <tr>
+
+                <td>@p.StudentId</td>
+                <td>@p.AssignmentId</td>
+                <th scope="row">@p.Mark</th>
+                <th scope="row">@p.CourseName</th>
+                <th>@p.BackResult</th>
+                <th>
+                    <a class="btn btn-warning" href="~/M_Mentor/M_MentorReturnResult/@p.Id" role="button">RETURN RESULT</a>
+                    <a class="btn btn-warning" href="~/M_Mentor/M_MentorNotReturnResult/@p.Id" role="button">NOT RETURN RESULT</a>
+
+                </th>
+
+            </tr>
+        }
+</table>

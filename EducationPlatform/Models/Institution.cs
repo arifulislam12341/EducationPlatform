@@ -16,8 +16,6 @@ namespace EducationPlatform.Models
     {
         public Institution()
         {
-            this.Certificates = new HashSet<Certificate>();
-            this.Notices = new HashSet<Notice>();
             this.Transactions = new HashSet<Transaction>();
         }
     
@@ -31,8 +29,6 @@ namespace EducationPlatform.Models
         public string IsValid { get; set; }
         public byte[] Photo { get; set; }
     
-        public virtual ICollection<Certificate> Certificates { get; set; }
-        public virtual ICollection<Notice> Notices { get; set; }
         public virtual ICollection<Transaction> Transactions { get; set; }
     }
 }

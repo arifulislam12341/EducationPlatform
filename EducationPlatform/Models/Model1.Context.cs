@@ -26,6 +26,7 @@ namespace EducationPlatform.Models
         }
     
         public DbSet<Admin> Admins { get; set; }
+        public DbSet<AnswerScript> AnswerScripts { get; set; }
         public DbSet<Assignment> Assignments { get; set; }
         public DbSet<Cart> Carts { get; set; }
         public DbSet<Certificate> Certificates { get; set; }
@@ -35,11 +36,13 @@ namespace EducationPlatform.Models
         public DbSet<Institution> Institutions { get; set; }
         public DbSet<Mentor> Mentors { get; set; }
         public DbSet<Notice> Notices { get; set; }
+        public DbSet<PasswordChanx> PasswordChanges { get; set; }
         public DbSet<Rating> Ratings { get; set; }
+        public DbSet<Result> Results { get; set; }
+        public DbSet<Reviewstudent> Reviewstudents { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
         public DbSet<ValidStudent> ValidStudents { get; set; }
-        public DbSet<PasswordChanx> PasswordChanges { get; set; }
         public DbSet<VarsityPasswordChanx> VarsityPasswordChanges { get; set; }
     }
 }

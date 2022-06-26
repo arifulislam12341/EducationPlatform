@@ -15,16 +15,9 @@ namespace EducationPlatform.Models
     public partial class Assignment
     {
         public int Id { get; set; }
-        public Nullable<int> StudentId { get; set; }
         public Nullable<int> MentorId { get; set; }
         public Nullable<int> CourseId { get; set; }
         public string Question { get; set; }
-        public string Answer { get; set; }
-        public string Grade { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
-    
-        public virtual Cours Cours { get; set; }
-        public virtual Mentor Mentor { get; set; }
-        public virtual Student Student { get; set; }
     }
 }

@@ -16,9 +16,7 @@ namespace EducationPlatform.Models
     {
         public Student()
         {
-            this.Assignments = new HashSet<Assignment>();
             this.Carts = new HashSet<Cart>();
-            this.Certificates = new HashSet<Certificate>();
             this.Counselings = new HashSet<Counseling>();
             this.Ratings = new HashSet<Rating>();
             this.Transactions = new HashSet<Transaction>();
@@ -36,9 +34,7 @@ namespace EducationPlatform.Models
         public string IsValid { get; set; }
         public string Gender { get; set; }
     
-        public virtual ICollection<Assignment> Assignments { get; set; }
         public virtual ICollection<Cart> Carts { get; set; }
-        public virtual ICollection<Certificate> Certificates { get; set; }
         public virtual ICollection<Counseling> Counselings { get; set; }
         public virtual ICollection<Rating> Ratings { get; set; }
         public virtual ICollection<Transaction> Transactions { get; set; }

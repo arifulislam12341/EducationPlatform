@@ -14,16 +14,24 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="AnswerScripts">
+      <EntityTypeMapping TypeName="EducationPlatformModel.AnswerScript">
+        <MappingFragment StoreEntitySet="AnswerScripts">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="AssignmentId" ColumnName="AssignmentId" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Assignments">
       <EntityTypeMapping TypeName="EducationPlatformModel.Assignment">
         <MappingFragment StoreEntitySet="Assignments">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
           <ScalarProperty Name="MentorId" ColumnName="MentorId" />
           <ScalarProperty Name="CourseId" ColumnName="CourseId" />
           <ScalarProperty Name="Question" ColumnName="Question" />
-          <ScalarProperty Name="Answer" ColumnName="Answer" />
-          <ScalarProperty Name="Grade" ColumnName="Grade" />
           <ScalarProperty Name="Date" ColumnName="Date" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -83,6 +91,7 @@
     <EntitySetMapping Name="Courses">
       <EntityTypeMapping TypeName="EducationPlatformModel.Cours">
         <MappingFragment StoreEntitySet="Courses">
+          <ScalarProperty Name="MentorId" ColumnName="MentorId" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Details" ColumnName="Details" />
@@ -90,6 +99,7 @@
           <ScalarProperty Name="Duration" ColumnName="Duration" />
           <ScalarProperty Name="Date" ColumnName="Date" />
           <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="InstitutionId" ColumnName="InstitutionId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -136,6 +146,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="PasswordChanges">
+      <EntityTypeMapping TypeName="EducationPlatformModel.PasswordChanx">
+        <MappingFragment StoreEntitySet="PasswordChanges">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Ratings">
       <EntityTypeMapping TypeName="EducationPlatformModel.Rating">
         <MappingFragment StoreEntitySet="Ratings">
@@ -144,6 +163,35 @@
           <ScalarProperty Name="MentorId" ColumnName="MentorId" />
           <ScalarProperty Name="CourseId" ColumnName="CourseId" />
           <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Results">
+      <EntityTypeMapping TypeName="EducationPlatformModel.Result">
+        <MappingFragment StoreEntitySet="Results">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="MentorId" ColumnName="MentorId" />
+          <ScalarProperty Name="AssignmentId" ColumnName="AssignmentId" />
+          <ScalarProperty Name="Mark" ColumnName="Mark" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+          <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+          <ScalarProperty Name="BackResult" ColumnName="BackResult" />
+          <ScalarProperty Name="InstitutionId" ColumnName="InstitutionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reviewstudents">
+      <EntityTypeMapping TypeName="EducationPlatformModel.Reviewstudent">
+        <MappingFragment StoreEntitySet="Reviewstudents">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="MentorId" ColumnName="MentorId" />
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+          <ScalarProperty Name="FeedBack" ColumnName="FeedBack" />
           <ScalarProperty Name="Date" ColumnName="Date" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -188,20 +236,11 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="PasswordChanges">
-      <EntityTypeMapping TypeName="EducationPlatformModel.PasswordChanx">
-        <MappingFragment StoreEntitySet="PasswordChanges">
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="Mail" ColumnName="Mail" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="VarsityPasswordChanges">
       <EntityTypeMapping TypeName="EducationPlatformModel.VarsityPasswordChanx">
         <MappingFragment StoreEntitySet="VarsityPasswordChanges">
-          <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

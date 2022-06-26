@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "M_MentorRatings";
+}
+
+<h2>M_MentorRatings</h2>
+
+<form action="" method="">
+   
+    <table class="table table-bordered">
+        <tr>
+
+            <th>COMMENT ID</th>
+            <th>STUDENT NAME</th>
+            <th scope="col">Comments</th>
+
+
+        </tr>
+       
+            @foreach (var p in Model)
+            {
+
+                <tr>
+                   <td> @p.Id</td>
+            
+
+                   <td>Anonymous</td>
+
+
+             
+                   
+                    <td>@p.Comment</td>
+
+
+                </tr>
+
+
+        
+        }
+        </table>
+
+</form>

@@ -22,9 +22,5 @@ namespace EducationPlatform.Models
         public string Status { get; set; }
         public string Comments { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
-    
-        public virtual Institution Institution { get; set; }
-        public virtual Mentor Mentor { get; set; }
-        public virtual Student Student { get; set; }
     }
 }

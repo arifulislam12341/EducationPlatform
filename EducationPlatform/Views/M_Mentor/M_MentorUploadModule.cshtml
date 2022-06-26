@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "M_MentorUploadModule";
+}
+
+
+
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title></title>
+</head>
+<body>
+    <center>
+        <h2 class="text-uppercase fw-bolder">UPLOAD MODULE</h2>
+        <form action="" method="post">
+            <div class="col-lg-3 "></div>
+            <div class="col-lg-6 shadow p-3 mb-5 bg-body rounded">
+                <table class="table table-primary table-borderless">
+
+
+
+                    <tr>
+                        <td>  <h3 class="text-uppercase">Material</h3></td>
+                        <td>    <input type="url" name="Material" value="" class="form-control text-center fw-bolder" /></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h3 class="text-uppercase">MODULE</h3>
+                        </td>
+                        <td>
+                            <input type="text" name="Module" value="" class="form-control text-center fw-bolder" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <h3 class="text-uppercase">Description</h3>
+                        </td>
+                        <td>
+                            <input type="text" name="Description" value="" class="form-control text-center fw-bolder" />
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            <h3 class="text-uppercase">Date</h3>
+                        </td>
+                        <td>
+                            <input type="date" name="Date" value="@(Model !=null ? Model.Date:"")" class="form-control text-center fw-bolder" />
+                        </td>
+                    </tr>
+
+
+
+                </table>
+                <button type="submit" class="btn btn-success fs-4 text-uppercase fw-bolder">SUBMIT</button>
+            </div>
+        </form>
+
+        <div class="col-lg-3 "></div>
+    </center>
+</body>
+</html>

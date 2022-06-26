@@ -19,7 +19,7 @@ namespace EducationPlatform.Models
         public Nullable<int> MentorId { get; set; }
         public string Material { get; set; }
         public string Description { get; set; }
-        public Nullable<double> Module { get; set; }
+        public string Module { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
     
         public virtual Cours Cours { get; set; }
