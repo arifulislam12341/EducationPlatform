@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using EducationPlatform.Auth;
 using EducationPlatform.Models;
 
 namespace EducationPlatform.Controllers
 {
+    [AdminLogged]
     public class AdminCourseController : Controller
     {
         // GET: AdminCourse
@@ -16,6 +18,7 @@ namespace EducationPlatform.Controllers
         }
         [HttpGet]
 
+        [AdminLogged]
         public ActionResult AddCourse()
         {
             return View();

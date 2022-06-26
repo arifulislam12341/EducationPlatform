@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using EducationPlatform.Auth;
 using EducationPlatform.Models;
 
 namespace EducationPlatform.Controllers
 {
+    [AdminLogged]
     public class AdminController : Controller
     {
         // GET: Admin
@@ -14,11 +16,13 @@ namespace EducationPlatform.Controllers
         {
             return View();
         }
+        [AllowAnonymous]
         [HttpGet]
         public ActionResult AdminLogin()
         {
             return View();
         }
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult AdminLogin(Admin obj)
         {
