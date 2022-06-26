@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="28091c8cc4c24a7682a3656940f07efe" Name="Diagram1">
+      <Diagram DiagramId="e302f52a2b7544cb8395467ebbe15065" Name="Diagram1">
         <EntityTypeShape EntityType="EducationPlatformModel.Admin" Width="1.5" PointX="5.75" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="EducationPlatformModel.AnswerScript" Width="1.5" PointX="7.75" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="EducationPlatformModel.Assignment" Width="1.5" PointX="8.75" PointY="4.125" IsExpanded="true" />
@@ -12,7 +12,7 @@
         <EntityTypeShape EntityType="EducationPlatformModel.Certificate" Width="1.5" PointX="8.75" PointY="7.125" IsExpanded="true" />
         <EntityTypeShape EntityType="EducationPlatformModel.Counseling" Width="1.5" PointX="6" PointY="12.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EducationPlatformModel.CourseDetail" Width="1.5" PointX="6" PointY="8.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="EducationPlatformModel.Cours" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationPlatformModel.Cours" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
         <EntityTypeShape EntityType="EducationPlatformModel.Institution" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EducationPlatformModel.Mentor" Width="1.5" PointX="3.75" PointY="19.5" IsExpanded="true" />
         <EntityTypeShape EntityType="EducationPlatformModel.Notice" Width="1.5" PointX="3" PointY="15.875" IsExpanded="true" />

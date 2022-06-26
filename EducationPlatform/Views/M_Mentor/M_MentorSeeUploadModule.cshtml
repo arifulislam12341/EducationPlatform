@@ -24,44 +24,44 @@
         }
         else
         {
-<table class="table table-hover">
-    <thead>
-        <tr class="table-dark fs-4 text-center text-uppercase fw-bolder">
-            <th scope="col">Material</th>
-            <th scope="col">module</th>
-            <th scope="col">description</th>
-            <th scope="col">date</th>
+            <table class="table table-hover">
+                <thead>
+                    <tr class="table-info shadow text-center text-uppercase fw-bolder">
+                        <th scope="col">Material</th>
+                        <th scope="col">module</th>
+                        <th scope="col">description</th>
+                        <th scope="col">date</th>
 
 
 
 
-        </tr>
-    </thead>
-    <tbody class="table-group-divider">
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
 
-        @foreach (var p in Model)
-        {
-            <tr class="text-center fs-5 fw-bolder">
+                    @foreach (var p in Model)
+                    {
+                        <tr class="text-center  fw-bolder">
 
-                <td>@p.Material</td>
-                <td>@p.Module</td>
-                <td>@p.Description</td>
-                <td>@p.Date</td>
+                            <td>@p.Material</td>
+                            <td>@p.Module</td>
+                            <td>@p.Description</td>
+                            <td>@p.Date</td>
 
 
 
-            </tr>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
         }
 
-    </tbody>
-</table>
-                }
+
+    }
 
 
-                }
 
 
-       
-
-        </body>
+</body>
 </html>

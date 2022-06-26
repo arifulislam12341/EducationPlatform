@@ -544,12 +544,12 @@
           <Property Name="Date" Type="DateTime" Precision="0" />
           <Property Name="Photo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="InstitutionId" Type="Int32" />
+          <Property Name="MentorId" Type="Int32" />
           <NavigationProperty Name="Carts" Relationship="Self.FK_Carts_Courses" FromRole="Courses" ToRole="Carts" />
           <NavigationProperty Name="CourseDetails" Relationship="Self.FK_CourseDetails_Mentors" FromRole="Courses" ToRole="CourseDetails" />
           <NavigationProperty Name="Notices" Relationship="Self.FK_Notices_Courses" FromRole="Courses" ToRole="Notices" />
           <NavigationProperty Name="Ratings" Relationship="Self.FK_Ratings_Courses" FromRole="Courses" ToRole="Ratings" />
           <NavigationProperty Name="Transactions" Relationship="Self.FK_Transactions_Courses" FromRole="Courses" ToRole="Transactions" />
-          <Property Name="MentorId" Type="Int32" />
         </EntityType>
         <EntityType Name="Institution">
           <Key>
@@ -1003,7 +1003,6 @@
           <EntitySetMapping Name="Courses">
             <EntityTypeMapping TypeName="EducationPlatformModel.Cours">
               <MappingFragment StoreEntitySet="Courses">
-                <ScalarProperty Name="MentorId" ColumnName="MentorId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Details" ColumnName="Details" />
@@ -1012,6 +1011,7 @@
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="Photo" ColumnName="Photo" />
                 <ScalarProperty Name="InstitutionId" ColumnName="InstitutionId" />
+                <ScalarProperty Name="MentorId" ColumnName="MentorId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

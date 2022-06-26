@@ -96,7 +96,7 @@ namespace EducationPlatform.Controllers
             //    var mentor =(from p in db.Mentors where p.Email==m.Email && p.Password==m.Password && p.IsValid=="Yes" select p).FirstOrDefault();
             if (mentor != null)
             {
-                Session["Type"] = 2;
+               
                 Session["MentorEmail"] = m.Email.ToString();
                 FormsAuthentication.SetAuthCookie(m.Email, true);
                 //FormsAuthentication.SetAuthCookie(a.Fname, true);
@@ -177,6 +177,7 @@ namespace EducationPlatform.Controllers
         }
 
         [MentorLoginAuth]
+        [HttpGet]
         public ActionResult M_MentorNotice(int id)
         {
             Session["COURSEID"] = id;

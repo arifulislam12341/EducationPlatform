@@ -298,7 +298,29 @@
     <Content Include="Views\Admin\AdminProfile.cshtml" />
     <Content Include="Views\Admin\AdminUpdate.cshtml" />
     <Content Include="Views\M_Mentor\M_MentorInformation.cshtml" />
-    <Content Include="Views\M_Student\Index.cshtml" />
+    <Content Include="Views\M_Mentor\M_MentorConfirmDelete.cshtml" />
+    <Content Include="Views\M_Mentor\M_MentorUpdate.cshtml" />
+    <Content Include="Views\M_Mentor\M_MentorCourseDetails.cshtml" />
+    <Content Include="Views\M_Mentor\M_MentorStudentId.cshtml" />
+    <Content Include="Views\M_Mentor\M_MentorStudentList.cshtml" />
+    <Content Include="Views\M_Mentor\M_MentorCounsiling.cshtml" />
+    <Content Include="Views\M_Mentor\M_MentorNotice.cshtml" />
+    <Content Include="Views\M_Mentor\M_MentorRatings.cshtml" />
+    <Content Include="Views\M_Mentor\M_MentorAssignment.cshtml" />
+    <Content Include="Views\M_Mentor\M_MentorStudentReview.cshtml" />
+    <Content Include="Views\M_Mentor\M_MentorStudentCertificate.cshtml" />
+    <Content Include="Views\M_Mentor\M_MentorStudentResult.cshtml" />
+    <Content Include="Views\M_Mentor\M_MentorAssignmentList.cshtml" />
+    <Content Include="Views\M_Mentor\M_MentorViewAnswer.cshtml" />
+    <Content Include="Views\M_Mentor\M_MentorTrackStudent.cshtml" />
+    <Content Include="Views\M_Mentor\M_MentorAllStudentResults.cshtml" />
+    <Content Include="Views\M_Mentor\M_MentorSeeNotice.cshtml" />
+    <Content Include="Views\M_Mentor\M_MentorUploadModule.cshtml" />
+    <Content Include="Views\M_Mentor\M_MentorSeeUploadModule.cshtml" />
+    <Content Include="Views\M_Mentor\Index.cshtml" />
+    <Content Include="Views\M_Mentor\M_MentorLogIN.cshtml" />
+    <Content Include="Views\M_Student\StudentAdd.cshtml" />
+    <Content Include="Views\M_Student\StudentInformation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
