@@ -11,12 +11,14 @@ namespace EducationPlatform.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Assignment
     {
         public int Id { get; set; }
         public Nullable<int> MentorId { get; set; }
         public Nullable<int> CourseId { get; set; }
+       
         public string Question { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
     }
