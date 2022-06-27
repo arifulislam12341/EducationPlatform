@@ -160,3 +160,9 @@ D:\ASP.NET\Midproject\EducationPlatform\EducationPlatform\EducationPlatform\obj\
 D:\ASP.NET\Midproject\EducationPlatform\EducationPlatform\EducationPlatform\obj\Debug\EducationPlatform.csproj.CopyComplete
 D:\ASP.NET\Midproject\EducationPlatform\EducationPlatform\EducationPlatform\obj\Debug\EducationPlatform.dll
 D:\ASP.NET\Midproject\EducationPlatform\EducationPlatform\EducationPlatform\obj\Debug\EducationPlatform.pdb
+D:\ASP.NET\Midproject\EducationPlatform\EducationPlatform\EducationPlatform\bin\Syncfusion.Compression.Base.dll
+D:\ASP.NET\Midproject\EducationPlatform\EducationPlatform\EducationPlatform\bin\Syncfusion.Licensing.dll
+D:\ASP.NET\Midproject\EducationPlatform\EducationPlatform\EducationPlatform\bin\Syncfusion.Pdf.Base.dll
+D:\ASP.NET\Midproject\EducationPlatform\EducationPlatform\EducationPlatform\bin\Syncfusion.Compression.Base.xml
+D:\ASP.NET\Midproject\EducationPlatform\EducationPlatform\EducationPlatform\bin\Syncfusion.Licensing.xml
+D:\ASP.NET\Midproject\EducationPlatform\EducationPlatform\EducationPlatform\bin\Syncfusion.Pdf.Base.xml

@@ -73,12 +73,13 @@
 
 
     </header>
-    <center> <h1 class="text-uppercase fw-bolder">Welcome @Model.Name</h1></center>
+    <br />
+    <center> <h1 class="text-uppercase fst-italic fw-bolder">Welcome @Model.Name</h1></center>
 
-
+    <br />
     <table class="table table-hover">
         <thead>
-            <tr class="table-dark  text-center text-uppercase fw-bolder">
+            <tr class="table-info shadow text-center text-uppercase fw-bolder">
                 <th scope="col">ID</th>
                 <th scope="col">Name</th>
                 <th scope="col">Address</th>
@@ -114,5 +115,8 @@
 
         </tbody>
     </table>
+    <center>
+        <a class="btn btn-danger shadow text-uppercase fw-bolder" href="~/M_Mentor/M_MentorInformationDownload/@Model.Id " role="button">DOWNLOAD INFORMATION</a>
+    </center>
 </body>
 </html>
